@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLORE WORLD</title>
+    <style>
+        .container {
+            width: 100%;
+            height: auto;
+            background-color: rgb(253, 231, 198);
+            border-bottom: 2px solid black;
+
+        }
+
+        .nav {
+            display: flex;
+            width: 100%;
+            height: 70px;
+            color: black;
+            background-color: whitesmoke;
+            justify-content: space-between;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        }
+
+        .logo {
+            padding: 10px;
+            width: 10%;
+
+        }
+
+        .nav>div:nth-child(2) {
+            width: 10%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 10px;
+            padding: 12px;
+        }
+
+        .nav>div:nth-child(3) {
+            width: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        .nav>div:nth-child(3)>p:nth-child(1):hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .nav>div:nth-child(3)>p:nth-child(2):hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .nav>div:nth-child(3)>p:nth-child(3):hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .nav>div:nth-child(3)>p:nth-child(4):hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .SearchBAr {
+            height: auto;
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: rgb(75, 89, 245);
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border-top: 1px solid black;
+            border-bottom: 3px solid black;
+            border-top: 3px solid black;
+
+
+        }
+
+        .SearchBAr>div:nth-child(1) {
+            width: 80%;
+            margin: auto;
+            border-bottom: 1px solid black;
+            color: rgb(18, 19, 18);
+            font-size: 20px;
+        }
+
+        .SearchBAr>div:nth-child(1)>div {
+            display: flex;
+            justify-content: space-evenly;
+            width: 40%;
+            margin: auto;
+
+
+        }
+
+        .hireCar {
+            width: 12%;
+            margin: 15px;
+            background-color: rgb(125, 232, 125);
+            padding: 15px;
+            border: 0px;
+            border-radius: 8px;
+        }
+
+        .location {
+            margin: 10px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .location>input {
+            width: 48%;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .DateTime {
+            margin: 20px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        .DateTime>input {
+            width: 22%;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 5px;
+
+        }
+
+        .confrimBooking {
+
+            width: 12%;
+            margin: 15px;
+            background-color: rgb(120, 220, 120);
+            padding: 15px;
+            border: 0px;
+            border-radius: 8px;
+            text-align: center;
+            margin-left: 45%;
+            border: 2 px solid black;
+        }
+
+        .confrimBooking:hover {
+            cursor: pointer;
+            background-color: rebeccapurple;
+        }
+
+        .imgMember {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .textDiv {
+            margin: 3%;
+            position: relative;
+        }
+
+        .firstTextImg {
+            font-size: 50px;
+            position: absolute;
+            top: 150px;
+            left: 20px;
+            color: white;
+        }
+
+        .secondTextImg {
+            font-size: 20px;
+            position: absolute;
+            color: white;
+            top: 265px;
+            left: 20px;
+        }
+
+        .thirdTextImg {
+            font-size: 20px;
+            position: absolute;
+            color: white;
+            top: 320px;
+            left: 20px;
+
+        }
+
+        .btnOverimg {
+            font-size: 20px;
+            position: absolute;
+            color: black;
+            background-color: #81D4FA;
+            top: 400px;
+            left: 20px;
+            padding: 13px;
+            border: 0px;
+            border-radius: 10px;
+
+        }
+
+        .QRSection {
+            height: auto;
+            display: flex;
+            width: 98%;
+            justify-content: space-evenly;
+            background-color: aliceblue;
+            margin: auto;
+            border-radius: 10px;
+
+        }
+
+        .QRSection>img {
+            width: 50%;
+            height: 300px;
+            padding: 20px;
+            border-radius: 50px;
+            margin-left: 10px;
+
+        }
+
+        .QRSection>div:nth-child(2) {
+            padding: 20px;
+            font-size: 17px;
+        }
+
+        .QR {
+            width: 60%;
+            padding: 40px;
+        }
+
+        .QR>p {
+            margin-left: 30px;
+
+
+        }
+
+        .QRinput {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .QRinput>input {
+            width: 32%;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .ORbtn {
+            width: 20%;
+            margin: 10px;
+            height: 40px;
+            background-color: rgb(146, 146, 253);
+            border: 0px;
+            border-radius: 10px;
+        }
+
+        .suggestion {
+            margin-left: 30px;
+
+        }
+
+        .suggestionIMG {
+
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+
+
+
+        }
+
+        .suggestionIMG>div {
+            padding: 10px;
+            height: auto;
+            width: 22%;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            background-color: aliceblue;
+        }
+
+        .divPlan {
+            width: 75%;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        .divPlan>img {
+            width: 100%;
+            border-radius: 10px;
+
+        }
+
+        .div2Plan {
+            margin: auto;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .div2Plan>img:nth-child(1) {
+            margin-left: 15px;
+            width: 70%;
+            border-radius: 10px;
+            height: 250px;
+
+        }
+
+        .div2Plan>img:nth-child(2) {
+            margin: auto;
+            width: 25%;
+            border-radius: 10px;
+            height: 250px;
+
+        }
+
+        .bottam {
+            margin: auto;
+            margin-top: 30px;
+            width: 90%;
+            height: auto;
+            text-align: center;
+        }
+
+        .bottamExpedia {
+            height: auto;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .bottamExpedia>div {
+            height: auotpx;
+            width: 17%;
+            background-color: aliceblue;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            border-radius: 10px;
+        }
+
+        .bottamExpedia>div:nth-child(1) {
+            height: auto;
+            color: rgb(224, 45, 45);
+            padding-top: 150px;
+            background-color: rgb(223, 156, 55);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="nav">
+            <img class="logo" src="https://www.expedia.co.in/_dms/header/logo.svg?locale=en_GB&siteid=27&2" alt="">
+
+            <div><strong>More travel</strong></div>
+            <div>
+                <p>English</p>
+                <p>Support</p>
+                <p>Trips</p>
+                <p>Sign in</p>
+            </div>
+
+        </div>
+        <div class="SearchBAr">
+            <div>
+                <div>
+                    <p><strong>Stays</strong></p>
+                    <p><strong>Flights</strong></p>
+                    <p><strong>Car</strong></p>
+                    <p><strong>Packages</strong></p>
+                </div>
+            </div>
+            <button class="hireCar">HIRE CAR</button>
+            <div class="location">
+                <input type="text" placeholder="Pick Up Location">
+                <input type="text" placeholder="Drop Off Location">
+            </div>
+            <div class="DateTime">
+                <input type="date" placeholder="Select your Pick Up date">
+                <input type="date" placeholder="Select your Drop Off date ">
+                <input type="time" placeholder="">
+                <input type="time" placeholder="">
+            </div>
+            <button class="confrimBooking">Confirm</button>
+
+
+        </div>
+        <div class="textDiv">
+            <img class="imgMember"
+                src="https://a.travel-assets.com/travel-assets-manager/cmct-5255/POSa-HP-Hero-D-928x398.jpg" alt="">
+            <h1 class="firstTextImg">Save instantly with<br>Expedia Rewards </h1>
+            <h5 class="secondTextImg">You can enjoy access to perks like Member Price,<br>saving an average of 15 % on
+                thousands of hotels .</h5>
+            <h5 class="thirdTextImg">Terms may apply .</h5>
+            <button class="btnOverimg">See Member Prices</button>
+        </div>
+        <div class="QRSection">
+            <img src="https://a.travel-assets.com/mad-service/footer/bnaBanners/BEX_ROME_iStock_72dpi.jpg" alt="">
+            <div>
+                <h1>Our App takes you further</h1>
+                <p>When you book on the app you can save even more up then 20% on select hotels while earning double the
+                    point s with every booking. with these app you'll save even more on trips, and that means you can
+                    take more trips,and manage it all on the go </p>
+                <h3>Take yourself a download link for easy access</h3>
+                <div class="QRinput">
+                    <input type="text" placeholder="country code">
+                    <input type="text" placeholder="phone number">
+                    <button class="ORbtn">Get the app</button>
+                </div>
+            </div>
+            <div class="QR">
+                <img width="60%" style="padding: 30px;"
+                    src="https://a.travel-assets.com/mad-service/qr-code/footer_qr_hp/27_QR_FOOTER_BNA_HP.png" alt="">
+                <p>Scan the QR code</p>
+            </div>
+        </div>
+        <div class="suggestion">
+            <h1>Suggestion for you</h1>
+            <h3>Popular Gurugram Stays</h3>
+            <p>These are the most-viewed stays in Gurugram</p>
+        </div>
+        <div class="suggestionIMG">
+            <div>
+                <img width="100%" style="border-radius: 10px"
+                    src="https://mediaim.expedia.com/hotels/25000000/24410000/24408500/24408483/51f43bae_w.jpg?impolicy=fcrop&w=357&h=201&p=1&q=medium"
+                    alt="">
+                <h3>Aloft New Delhi Aerocity</h3>
+                <p>Aerocity</p>
+                <p><strong>4.3/5</strong> Excellent(432 reviews)</p>
+                <h1>Rs.12,700</h1>
+                <p>for one night(23 nov-24 nov)</p>
+            </div>
+            <div>
+                <img width="100%" style="border-radius: 10px"
+                    src="https://mediaim.expedia.com/hotels/5000000/4660000/4651800/4651727/c9be0802_w.jpg?impolicy=fcrop&w=357&h=201&p=1&q=medium"
+                    alt="">
+                <h3>Welcomehotel by ITC Hotels,<br>Dwarka New Delhi</h3>
+                <p>Dwarka</p>
+                <p><strong>3.7/5/5</strong> Good(997 reviews)</p>
+                <h1>Rs.9,180</h1>
+                <p>for one night(23 nov-24 nov)</p>
+            </div>
+            <div>
+                <img width="100%" style="border-radius: 10px"
+                    src="https://mediaim.expedia.com/hotels/1000000/540000/536600/536519/2525421d_w.jpg?impolicy=fcrop&w=357&h=201&p=1&q=medium"
+                    alt="">
+                <h3>The Metropolitan Hotel and Spa<br>New Delhi</h3>
+                <p>Connaught Place</p>
+                <p><strong>4.0/5</strong> Very Good(1001 reviews)</p>
+                <h1>Rs.9,000</h1>
+                <p>for one night(23 nov-24 nov)</p>
+            </div>
+            <div>
+                <img width="100%" style="border-radius: 10px"
+                    src="https://mediaim.expedia.com/hotels/14000000/13240000/13235700/13235605/f188ead1_w.jpg?impolicy=fcrop&w=357&h=201&p=1&q=medium"
+                    alt="">
+                <h3>Andaz Delhi - a cocept by hyatt </h3>
+                <p>Aerocity</p>
+                <p><strong>4.4/5</strong> Excellent(484 reviews)</p>
+                <h1>Rs.16,020</h1>
+                <p>for one night(23 nov-24 nov)</p>
+            </div>
+        </div>
+        <div class="divPlan">
+            <img src="https://tpc.googlesyndication.com/simgad/4477719789317755579?" alt="">
+        </div>
+        <div class="div2Plan">
+            <img src="https://a.travel-assets.com/travel-assets-manager/gmvd-1482-bookearly-emea/667x320.jpg" alt="">
+            <img src="https://tpc.googlesyndication.com/simgad/9694300187526983539?" alt="">
+        </div>
+        <div class="bottam">
+            <p>Explore a world of travel with Expedia</p>
+            <p style="color:rgb(82, 198, 237);"><u>Discover new places and experiences</u></p>
+            <div class="bottamExpedia">
+                <div>
+                    <h3>EXPLORE WORLD GROUP</h3>
+                </div>
+                <div>
+                    <p><strong>Company</strong></p>
+                    <p>About</p>
+                    <p>Jobs</p>
+                    <p>List your priority</p>
+                    <p>Partnerships</p>
+                </div>
+                <div>
+                    <p><strong>Explore</strong></p>
+                    <p>Inida travel guide</p>
+                    <p>Hotels in India</p>
+                    <p>Holiday rentals in India</p>
+                    <p>Holiday Packages in India</p>
+                    <p>Domestics Flights</p>
+                    <p>Car hire in India</p>
+                    <p>All accommondation type</p>
+                    <p>Travel blog</p>
+                </div>
+                <div>
+                    <p><strong>Policies</strong></p>
+                    <p>Private Statement</p>
+                    <p>Terms of use</p>
+                    <p>Vrbo terms & conditions</p>
+                </div>
+                <div>
+                    <p><strong>Help</strong></p>
+                    <p>Supprt</p>
+                    <p>Change or Cancel your booking</p>
+                    <p>Refund process and timelines</p>
+                    <p>Book a flight using an airline credits</p>
+                    <p>International travel documents</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
