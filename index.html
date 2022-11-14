@@ -3,7 +3,7 @@
 
 <head>
 
-   
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
             width: 5%;
             border-radius: 30px;
             padding-left: 30px;
-         }
+        }
 
         .nav>div:nth-child(2) {
             width: 10%;
@@ -42,7 +42,7 @@
             justify-content: space-evenly;
             margin: 15px;
             padding: 12px;
-        
+
         }
 
         .nav>div:nth-child(3) {
@@ -52,7 +52,7 @@
             padding: 10px;
             font-weight: bold;
             color: white;
-        
+
         }
 
         .nav>div:nth-child(3)>p:nth-child(1):hover {
@@ -74,16 +74,18 @@
             color: blue;
             cursor: pointer;
         }
-        a{
+
+        a {
             text-decoration: none;
             margin-top: 15px;
             color: white;
-           
+
         }
-        a:hover{
+
+        a:hover {
             color: blue;
             cursor: pointer;
-            
+
         }
 
         .SearchBAr {
@@ -129,12 +131,18 @@
             color: white;
         }
 
+        .hireCar:hover {
+            cursor: pointer;
+        }
+
         .location {
             margin: 10px;
             width: 100%;
             height: auto;
             display: flex;
             justify-content: space-evenly;
+            display: none;
+            ;
         }
 
         .location>input {
@@ -151,6 +159,7 @@
             height: auto;
             display: flex;
             justify-content: space-evenly;
+            display: none;
 
         }
 
@@ -175,6 +184,7 @@
             margin-left: 45%;
             border: 2 px solid black;
             color: white;
+            display: none;
         }
 
         .confrimBooking:hover {
@@ -316,8 +326,9 @@
             border-radius: 10px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
             background-color: aliceblue;
-         
+
         }
+
         .suggestionIMG>div:hover {
             transform: scale(1.1);
             cursor: pointer;
@@ -340,7 +351,7 @@
             margin: auto;
             margin-top: 30px;
             width: 95%;
-    }
+        }
 
         .div2Plan>img:nth-child(1) {
             margin-left: 15px;
@@ -406,7 +417,7 @@
                 <p>English</p>
                 <p>Support</p>
                 <a href="C:\Users\User\Desktop\jumbled-silk-6637\MyTrips.html">MyTrips</a>
-                <a href="C:\Users\User\Desktop\jumbled-silk-6637\signin.html">Sign in</a>
+                <a href="C:\Users\User\Desktop\jumbled-silk-6637\signin.html" id="SI">Sign in</a>
             </div>
 
         </div>
@@ -419,18 +430,18 @@
                     <p><strong>Packages</strong></p>
                 </div>
             </div>
-            <button class="hireCar">HIRE CAR</button>
+            <button class="hireCar" onclick="HireCAR()">HIRE CAR</button>
             <div class="location">
-                <input type="text" placeholder="Pick Up Location">
-                <input type="text" placeholder="Drop Off Location">
+                <input type="text" id="PL" placeholder="Pick Up Location">
+                <input type="text" id="DL" placeholder="Drop Off Location">
             </div>
             <div class="DateTime">
-                <input type="date" placeholder="Select your Pick Up date">
-                <input type="date" placeholder="Select your Drop Off date ">
-                <input type="time" placeholder="">
-                <input type="time" placeholder="">
+                <input type="date" id="PD" placeholder="Select your Pick Up date">
+                <input type="date" id="DD" placeholder="Select your Drop Off date ">
+                <input type="time" id="PT" placeholder="">
+                <input type="time" id="DT" placeholder="">
             </div>
-            <button class="confrimBooking">Confirm</button>
+            <button class="confrimBooking" onclick="cnfrmBooking()">Confirm</button>
 
 
         </div>
@@ -560,5 +571,52 @@
         </div>
     </div>
 </body>
+<script>
+    let LSData=JSON.parse(localStorage.getItem(('details')))||[];
+    
+    function HireCAR() { 
+      if (localStorage.getItem("userLoggedIn") ) {
+        document.querySelector(".location").style.display = "block";
+        document.querySelector(".DateTime").style.display = "block";
+        document.querySelector(".confrimBooking").style.display = "block";
+      
+    }
+    else {
+
+        alert("please login");
+        window.location.href="signin.html";
+    }
+
+}
+      
+    function cnfrmBooking() {
+        event.preventDefault();
+        let PickupLocation = document.querySelector("#PL").value;
+        let DropOffLocation = document.querySelector("#DL").value;
+        let PickupTime = document.querySelector("#PT").value;
+        let DropOffTime = document.querySelector("#DT").value;
+        let PickupDate = document.querySelector("#PD").value;
+        let DropOffDate = document.querySelector("#DD").value;
+        if (PickupLocation && DropOffLocation && PickupTime && DropOffTime && PickupDate && DropOffDate) {
+
+            let UserObj = {
+                PickupLocation: PickupLocation,
+                DropOffLocation: DropOffLocation,
+                PickupTime: PickupTime,
+                DropOffTime: DropOffTime,
+                PickupDate: PickupDate,
+                DropOffDate: DropOffDate
+            }
+            alert("Thank You for Booking...Happy Journey")
+            LSData.push(UserObj)
+            localStorage.setItem('details', JSON.stringify(LSData));
+            window.location.href="MyTrips.html";
+        }else{
+            alert("All fileds are mendatory...");
+        }
+    }
+ 
+
+</script>
 
 </html>

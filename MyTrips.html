@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>MyTrips</title>
 </head>
 <style>
-    .container{
+    .container {
         width: 100%;
         height: auto;
         margin: auto;
@@ -16,83 +17,126 @@
         border-bottom: 2px solid black;
         padding-bottom: 1px;
     }
-    .childContainer1{
-        width: 50%;
+
+    .childContainer1 {
+        width: 70%;
         margin: auto;
-        height: 300px;
+        height: auto;
         background-color: whitesmoke;
         margin-top: 50px;
         border: 2px solid black;
         border-radius: 10px;
+        padding: 10px;
     }
-    a{
-            text-decoration: none;
-            margin-top: 15px;
-            color:white;
-           
-        }
-        a:hover{
-            color: blue;
-            cursor: pointer;
-            
-        }
-        
-        .nav {
-            display: flex;
-            width: 100%;
-            height: 90px;
-            color: white;
-            background-color: black;
-            justify-content: space-between;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            border-radius: 10px;
 
-        }
+    a {
+        text-decoration: none;
+        margin-top: 15px;
+        color: white;
 
-        .logo {
-            padding: 15px;
-            width: 5%;
-            border-radius: 30px;
-            padding-left: 30px;
+    }
 
-        }
+    a:hover {
+        color: blue;
+        cursor: pointer;
 
-        .nav>div:nth-child(2) {
-            width: 10%;
-            display: flex;
-            justify-content: space-evenly;
-            margin: 15px;
-            padding: 12px;
-        }
+    }
 
-        .nav>div:nth-child(3) {
-            width: 40%;
-            display: flex;
-            justify-content: space-evenly;
-            padding: 10px;
-            font-weight: bold;
-        }
+    .nav {
+        display: flex;
+        width: 100%;
+        height: 90px;
+        color: white;
+        background-color: black;
+        justify-content: space-between;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 10px;
 
-        .nav>div:nth-child(3)>p:nth-child(1):hover {
-            color: blue;
-            cursor: pointer;
-        }
+    }
 
-        .nav>div:nth-child(3)>p:nth-child(2):hover {
-            color: blue;
-            cursor: pointer;
-        }
+    .logo {
+        padding: 15px;
+        width: 5%;
+        border-radius: 30px;
+        padding-left: 30px;
 
-        .nav>div:nth-child(3)>p:nth-child(3):hover {
-            color: blue;
-            cursor: pointer;
-        }
+    }
 
-        .nav>div:nth-child(3)>p:nth-child(4):hover {
-            color: blue;
-            cursor: pointer;
-        }
+    .nav>div:nth-child(2) {
+        width: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 15px;
+        padding: 12px;
+    }
+
+    .nav>div:nth-child(3) {
+        width: 40%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .nav>div:nth-child(3)>p:nth-child(1):hover {
+        color: blue;
+        cursor: pointer;
+    }
+
+    .nav>div:nth-child(3)>p:nth-child(2):hover {
+        color: blue;
+        cursor: pointer;
+    }
+
+    .nav>div:nth-child(3)>p:nth-child(3):hover {
+        color: blue;
+        cursor: pointer;
+    }
+
+    .nav>div:nth-child(3)>p:nth-child(4):hover {
+        color: blue;
+        cursor: pointer;
+    }
+
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    table td {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        justify-content: space-evenly;
+
+    }
+
+
+    table tr:nth-child(even) {
+        background-color: #8caacf;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #0468aa;
+        color: white;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        justify-content: space-evenly;
+    }
 </style>
+
 <body>
     <div class="container">
         <div class="nav">
@@ -103,17 +147,68 @@
                 <a href="C:\Users\User\Desktop\jumbled-silk-6637\index.html">Home</a>
                 <p>English</p>
                 <p>Support</p>
-                <a href="C:\Users\User\Desktop\jumbled-silk-6637\MyTrips.html">MyTrips</a>
-                <a href="C:\Users\User\Desktop\jumbled-silk-6637\signin.html">Sign in</a>
+                <a href="C:\Users\User\Desktop\jumbled-silk-6637\MyTrips.html" >MyTrips</a>
+                <a href="C:\Users\User\Desktop\jumbled-silk-6637\signin.html" id="SI">Sign in</a>
             </div>
 
         </div>
-        <h1 >Hello, Here you can find your Trip</h1>
-        <div class="childContainer1">
+        <h1>Hello, Here you can find your Trip</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>PickupLocation</th>
+                    <th>DropOffLocation</th>
+                    <th>PickupDate</th>
+                    <th>DropOffDate</th>
+                    <th>PickupTime</th>
+                    <th>DropOffTime</th>
+                </tr>
+            </thead>
+              <tbody>
 
-        </div>
-        <h2>Thank You for Booking</h2>
+              </tbody>
+        </table>
+
+        <h2 >Thank You for Booking</h2>
         <h3>Happy Journey</h3>
     </div>
 </body>
+
+<script>
+    let LSData = JSON.parse(localStorage.getItem("details"))||[];
+    let tbody = document.querySelector("tbody");
+
+    function displayTrip(data) {
+        data.forEach(function (el) {
+            let tr = document.createElement("tr");
+
+            let pickupLocation = document.createElement('td');
+            pickupLocation.innerText = el.PickupLocation;
+
+            let DropOffLocation = document.createElement('td');
+            DropOffLocation.innerText = el.DropOffLocation;
+
+            let pickupDate = document.createElement('td');
+            pickupDate.innerText = el.PickupDate;
+
+            let DropOffDate = document.createElement('td');
+            DropOffDate.innerText = el.DropOffDate;
+
+            let PickupTime = document.createElement('td');
+            PickupTime.innerText = el.PickupTime;
+
+            let DropOffTime = document.createElement('td');
+            DropOffTime.innerText = el.DropOffTime;
+
+            tr.append(pickupLocation, DropOffLocation, pickupDate, DropOffDate, PickupTime, DropOffTime);
+            tbody.append(tr);
+
+
+        });
+
+    }
+    displayTrip(LSData);
+
+</script>
+
 </html>
